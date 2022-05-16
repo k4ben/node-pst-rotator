@@ -9,10 +9,12 @@ class PSTRotator {
 
   origin: string
   private _bearing: number | undefined = undefined
+  pollRate: number
 
   onBearing: (bearing: number) => void = ()=>{}
 
-  constructor(origin: string) {
+  constructor(origin: string, pollRate=1000) {
+    this.pollRate = pollRate;
     this.origin = origin;
   }
 
@@ -26,7 +28,7 @@ class PSTRotator {
       this._bearing = bearing;
       this.onBearing(bearing);
     }
-    setTimeout(()=> this.poll(), 1000);
+    setTimeout(()=> this.poll(), this.pollRate);
   }
 
   async getBearing() {

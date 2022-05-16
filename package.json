@@ -1,6 +1,6 @@
 {
   "name": "node-pst-rotator",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Ben Eastwood",
   "description": "A TypeScript module for controlling PSTRotatorAZ via its web server.",
   "scripts": {
